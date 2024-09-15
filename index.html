@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Area to HTML Preview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    .preview {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #f9f9f9;
+      min-height: 100px;
+    }
+    p {
+      margin: 0; /* デフォルトのマージンを削除 */
+      padding: 5px 0; /* 行の高さを調整 */
+      line-height: 1.5; /* 行の高さを調整 */
+    }
+  </style>
+</head>
+<body>
+  <h1>Text Area to HTML Preview</h1>
+  <textarea id="inputText" placeholder="Enter text here..."></textarea>
+  <div class="preview" id="htmlPreview"></div>
+
+  <script type="module">
+    import { parseTextArea } from './build/debug.js';
+
+    // テキストエリアとプレビューの要素を取得
+    const inputText = document.getElementById('inputText');
+    const htmlPreview = document.getElementById('htmlPreview');
+
+    // テキストエリアの内容が変更されるたびにプレビューを更新
+    inputText.addEventListener('input', () => {
+      const input = inputText.value;
+      const output = parseTextArea(input);
+      htmlPreview.innerHTML = output;
+    });
+  </script>
+</body>
+</html>

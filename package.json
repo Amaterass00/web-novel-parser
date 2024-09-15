@@ -1,0 +1,25 @@
+{
+  "name": "narou-parser",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "assemblyscript": "^0.27.29"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  },
+  "scripts": {
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "bun run asbuild:debug && bun run asbuild:release",
+    "test": "bun test",
+    "start": "bunx serve ."
+  }
+}
