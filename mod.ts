@@ -1,1 +1,1 @@
-export { parseNarouNovel } from "./build/release"
+export { parseNarouNovel } from "./assembly/index"
