@@ -36,7 +36,7 @@
   <div class="preview" id="htmlPreview"></div>
 
   <script type="module">
-    import { parseTextArea } from './build/debug.js';
+    import { parseNarouNovel } from './build/release.js';
 
     // テキストエリアとプレビューの要素を取得
     const inputText = document.getElementById('inputText');
@@ -45,7 +45,7 @@
     // テキストエリアの内容が変更されるたびにプレビューを更新
     inputText.addEventListener('input', () => {
       const input = inputText.value;
-      const output = parseTextArea(input);
+      const output = parseNarouNovel(input);
       htmlPreview.innerHTML = output;
     });
   </script>

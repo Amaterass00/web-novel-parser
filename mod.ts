@@ -1,0 +1,1 @@
+export { parseNarouNovel } from "./build/release"

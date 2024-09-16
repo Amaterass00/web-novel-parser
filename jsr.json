@@ -1,0 +1,5 @@
+{
+    "name": "@l4ph/web-novel-parser",
+    "version": "0.1.0",
+    "exports": "./mod.ts"
+}

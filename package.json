@@ -1,5 +1,5 @@
 {
-  "name": "narou-parser",
+  "name": "web-novel-parser",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
