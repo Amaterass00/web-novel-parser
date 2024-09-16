@@ -2,5 +2,5 @@
   "extends": "assemblyscript/std/assembly.json",
   "include": [
     "./**/*.ts"
-  ]
+, "../tests/ruby/parse-kakuyomu-ruby.test.ts", "../tests/ruby/parse-narou-ruby.test.ts"  ]
 }
