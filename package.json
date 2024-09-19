@@ -1,7 +1,6 @@
 {
   "name": "web-novel-parser",
   "module": "index.ts",
-  "type": "module",
   "devDependencies": {
     "@types/bun": "^1.1.9",
     "@types/web": "^0.0.163",
@@ -22,5 +21,6 @@
     "asbuild": "bun run asbuild:debug && bun run asbuild:release",
     "test": "bun test",
     "start": "bunx serve ."
-  }
+  },
+  "type": "module"
 }

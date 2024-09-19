@@ -24,28 +24,47 @@
       min-height: 100px;
     }
     p {
-      margin: 0; /* デフォルトのマージンを削除 */
-      padding: 5px 0; /* 行の高さを調整 */
-      line-height: 1.5; /* 行の高さを調整 */
+      margin: 0;
+      padding: 5px 0;
+      line-height: 1.5;
+    }
+    select {
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
   <h1>Text Area to HTML Preview</h1>
+  
+  <!-- ドロップダウンメニューを追加 -->
+  <select id="novelType">
+    <option value="narou">なろう</option>
+    <option value="kakuyomu">カクヨム</option>
+  </select>
+  
   <textarea id="inputText" placeholder="Enter text here..."></textarea>
   <div class="preview" id="htmlPreview"></div>
 
   <script type="module">
-    import { parseNarouNovel } from './build/release.js';
+    import { parseNarouNovel, parseKakuyomuNovel } from './build/release.js';
 
-    // テキストエリアとプレビューの要素を取得
     const inputText = document.getElementById('inputText');
     const htmlPreview = document.getElementById('htmlPreview');
+    const novelType = document.getElementById('novelType');
 
     // テキストエリアの内容が変更されるたびにプレビューを更新
     inputText.addEventListener('input', () => {
       const input = inputText.value;
-      const output = parseNarouNovel(input);
+      let output = '';
+      
+      if (novelType.value === 'narou') {
+        output = parseNarouNovel(input);
+      } else if (novelType.value === 'kakuyomu') {
+        output = parseKakuyomuNovel(input);
+      }
+      
       htmlPreview.innerHTML = output;
     });
   </script>
