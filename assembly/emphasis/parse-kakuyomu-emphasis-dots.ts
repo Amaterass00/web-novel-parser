@@ -1,23 +1,29 @@
-export function parseKakuyomuEmphasisDots(text: string): string {
+/**
+ * 
+ * @param input カクヨム記法の傍点
+ * @returns カクヨム記法の傍点のHTML
+ */
+
+export function parseKakuyomuEmphasisDots(input: string): string {
   let result = '';
   let i: i32 = 0;
 
-  while (i < text.length) {
-    const start: i32 = text.indexOf('《《', i);
+  while (i < input.length) {
+    const start: i32 = input.indexOf('《《', i);
     if (start === -1) {
-      result += text.slice(i);
+      result += input.slice(i);
       break;
     }
 
-    result += text.slice(i, start);
-    const end: i32 = text.indexOf('》》', start);
+    result += input.slice(i, start);
+    const end: i32 = input.indexOf('》》', start);
 
     if (end === -1) {
-      result += text.slice(start);
+      result += input.slice(start);
       break;
     }
 
-    const content = text.slice(start + 2, end);
+    const content: string = input.slice(start + 2, end);
     const spans: string = content.split('')
       .map<string>(char => `<span>${char}</span>`)
       .join('');

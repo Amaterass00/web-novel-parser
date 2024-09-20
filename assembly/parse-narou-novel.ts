@@ -1,5 +1,11 @@
 import { parseNarouRuby } from "./ruby/parse-narou-ruby";
 
+/**
+ * 
+ * @param input カクヨム記法の小説
+ * @returns カクヨム記法で書かれた小説のHTML
+ */
+
 export function parseNarouNovel(input: string): string {
     const lines = input.split('\n');
     let result = "";

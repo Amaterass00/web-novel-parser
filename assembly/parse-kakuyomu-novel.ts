@@ -1,6 +1,12 @@
 import { parseKakuyomuRuby } from "./ruby/parse-kakuyomu-ruby";
 import { parseKakuyomuEmphasisDots } from "./emphasis/parse-kakuyomu-emphasis-dots";
 
+/**
+ * 
+ * @param input なろう記法の小説
+ * @returns なろう記法で書かれた小説のHTML
+ */
+
 export function parseKakuyomuNovel(input: string): string {
     const lines = input.split('\n');
     let result = "";

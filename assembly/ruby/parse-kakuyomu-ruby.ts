@@ -1,6 +1,11 @@
 import { parseNarouRuby } from "./parse-narou-ruby";
 
-// AssemblyScript
+/**
+ * 
+ * @param input カクヨム記法のルビ
+ * @returns カクヨム記法のルビのHTML
+ */
+
 export function parseKakuyomuRuby(input: string): string {
     let output = input;
 
@@ -16,14 +21,13 @@ export function parseKakuyomuRuby(input: string): string {
             if (rtEnd !== -1) {
                 const rubyText = output.substring(rubyStart + 1, rtEnd);
     
-                // baseStartを調整し、直前の単語にルビを適用する
                 const baseEnd = rubyStart;
                 let baseStart = baseEnd - 1;
     
                 while (baseStart >= 0 && !isDelimiter(output.charAt(baseStart))) {
                     baseStart--;
                 }
-                baseStart++;  // 単語の最初の位置
+                baseStart++;
     
                 const baseText = output.substring(baseStart, baseEnd);
                 const rubyHtml = `<ruby>${baseText}<rp>(</rp><rt>${rubyText}</rt><rp>)</rp></ruby>`;

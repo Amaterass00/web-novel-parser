@@ -1,4 +1,10 @@
-// AssemblyScript
+
+/**
+ * 
+ * @param input なろう記法のルビ
+ * @returns なろう記法のルビのHTML
+ */
+
 export function parseNarouRuby(input: string): string {
     let output = input;
 
