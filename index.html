@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,8 +37,7 @@
 </head>
 <body>
   <h1>Text Area to HTML Preview</h1>
-  
-  <!-- ドロップダウンメニューを追加 -->
+
   <select id="novelType">
     <option value="narou">なろう</option>
     <option value="kakuyomu">カクヨム</option>
@@ -54,7 +53,6 @@
     const htmlPreview = document.getElementById('htmlPreview');
     const novelType = document.getElementById('novelType');
 
-    // テキストエリアの内容が変更されるたびにプレビューを更新
     inputText.addEventListener('input', () => {
       const input = inputText.value;
       let output = '';

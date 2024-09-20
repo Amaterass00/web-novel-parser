@@ -1,4 +1,7 @@
 {
+  "entries": [
+    "./mod.ts"
+  ],
   "targets": {
     "debug": {
       "outFile": "build/debug.wasm",
@@ -10,6 +13,7 @@
       "outFile": "build/release.wasm",
       "textFile": "build/release.wat",
       "sourceMap": true,
+      "optimize": true,
       "optimizeLevel": 3,
       "shrinkLevel": 0,
       "converge": false,

@@ -1,2 +1,2 @@
-export { parseNarouNovel } from "./assembly/index"
-export { parseKakuyomuNovel } from "./assembly/index"
+export { parseNarouNovel } from "./assembly/parse-narou-novel"
+export { parseKakuyomuNovel } from "./assembly/parse-kakuyomu-novel"
